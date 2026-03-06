@@ -1,0 +1,134 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Regístrate',
+    description: 'Crea tu cuenta en menos de 2 minutos con tus datos básicos y preferencias médicas.'
+  },
+  {
+    number: '02',
+    title: 'Elige tu Médico',
+    description: 'Selecciona un médico general o especialista según tu necesidad y disponibilidad.'
+  },
+  {
+    number: '03',
+    title: 'Videoconsulta',
+    description: 'Conéctate por videollamada segura desde tu dispositivo en el horario elegido.'
+  },
+  {
+    number: '04',
+    title: 'Recibe Tratamiento',
+    description: 'Obtén tu diagnóstico, recetas electrónicas y seguimiento médico personalizado.'
+  }
+];
+---
+
+<section id="como-funciona" class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2>Cómo Funciona</h2>
+      <p>Consulta médica en 4 sencillos pasos</p>
+    </div>
+    <div class="steps-container">
+      {steps.map((step, index) => (
+        <div class="step">
+          <div class="step-number">{step.number}</div>
+          <div class="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+          {index < steps.length - 1 && <div class="step-connector"></div>}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .section-header h2 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+  }
+
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    position: relative;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .step-number {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--shadow-md);
+  }
+
+  .step-content h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.5rem;
+  }
+
+  .step-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+  }
+
+  .step-connector {
+    position: absolute;
+    top: 40px;
+    left: 100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-secondary) 0%, rgba(255, 255, 255, 0.3) 100%);
+    z-index: -1;
+  }
+
+  @media (max-width: 1024px) {
+    .steps-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-lg);
+    }
+
+    .step-connector {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .steps-container {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+  }
+</style>

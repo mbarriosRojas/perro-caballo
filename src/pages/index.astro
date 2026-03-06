@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Benefits from '../components/Benefits.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout 
+  title="Médico Online - Consulta Médica por Videollamada 24/7" 
+  description="Plataforma integral de telemedicina. Consulta médica online con especialistas certificados. Atención inmediata, recetas electrónicas y seguimiento personalizado."
+>
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <HowItWorks />
+    <Benefits />
+    <Testimonials />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,115 @@
+---
+const services = [
+  {
+    icon: '🩺',
+    title: 'Consulta General',
+    description: 'Atención médica integral para síntomas comunes, diagnósticos iniciales y orientación profesional.'
+  },
+  {
+    icon: '💊',
+    title: 'Recetas Electrónicas',
+    description: 'Obtén tus medicamentos recetados de forma digital y válida en cualquier farmacia.'
+  },
+  {
+    icon: '🧠',
+    title: 'Salud Mental',
+    description: 'Apoyo psicológico y psiquiátrico con especialistas certificados en bienestar emocional.'
+  },
+  {
+    icon: '👨‍⚕️',
+    title: 'Especialistas',
+    description: 'Acceso a dermatólogos, cardiólogos, endocrinólogos y más de 20 especialidades médicas.'
+  },
+  {
+    icon: '📊',
+    title: 'Seguimiento Continuo',
+    description: 'Monitoreo de condiciones crónicas y planes de tratamiento personalizados.'
+  },
+  {
+    icon: '🏥',
+    title: 'Urgencias Online',
+    description: 'Atención inmediata para situaciones que requieren respuesta rápida pero no emergencia.'
+  }
+];
+---
+
+<section id="servicios" class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Nuestros Servicios</h2>
+      <p>Atención médica completa adaptada a tus necesidades</p>
+    </div>
+    <div class="services-grid">
+      {services.map((service) => (
+        <article class="service-card">
+          <div class="service-icon">{service.icon}</div>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background-color: var(--color-white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .section-header h2 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    color: var(--color-gray);
+    font-size: 1.125rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid var(--color-light);
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .service-card h3 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .service-card p {
+    color: var(--color-gray);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

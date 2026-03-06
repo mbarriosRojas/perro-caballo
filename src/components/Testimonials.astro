@@ -1,0 +1,151 @@
+---
+const testimonials = [
+  {
+    name: 'María González',
+    role: 'Madre de familia',
+    comment: 'Increíble servicio. Consulté por la fiebre de mi hijo a medianoche y en 10 minutos ya estaba hablando con un pediatra. Me salvaron de ir a urgencias.',
+    rating: 5
+  },
+  {
+    name: 'Carlos Rodríguez',
+    role: 'Empresario',
+    comment: 'Como viajo constantemente, necesitaba atención médica flexible. Médico Online me permite cuidar mi salud desde cualquier parte del mundo.',
+    rating: 5
+  },
+  {
+    name: 'Ana Martínez',
+    role: 'Jubilada',
+    comment: 'La mejor decisión para mis consultas de seguimiento. Ya no tengo que trasladarme, y los doctores son muy profesionales y atentos.',
+    rating: 5
+  }
+];
+---
+
+<section id="testimonios" class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>Lo Que Dicen Nuestros Pacientes</h2>
+      <p>Testimonios reales de personas que confían en nosotros</p>
+    </div>
+    <div class="testimonials-grid">
+      {testimonials.map((testimonial) => (
+        <article class="testimonial-card">
+          <div class="stars">
+            {Array.from({ length: testimonial.rating }).map(() => (
+              <span class="star">⭐</span>
+            ))}
+          </div>
+          <blockquote>
+            <p>"{testimonial.comment}"</p>
+          </blockquote>
+          <div class="author">
+            <div class="author-avatar">
+              {testimonial.name.charAt(0)}
+            </div>
+            <div class="author-info">
+              <strong>{testimonial.name}</strong>
+              <span>{testimonial.role}</span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background-color: var(--color-white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .section-header h2 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    color: var(--color-gray);
+    font-size: 1.125rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .testimonial-card {
+    background-color: var(--color-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .stars {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .star {
+    font-size: 1.25rem;
+  }
+
+  blockquote {
+    flex-grow: 1;
+  }
+
+  blockquote p {
+    color: var(--color-dark);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-info strong {
+    color: var(--color-dark);
+    font-size: 1rem;
+  }
+
+  .author-info span {
+    color: var(--color-gray);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
