@@ -35,6 +35,16 @@
 - `/public/favicon.svg` - Icono personalizado
 - `astro.config.mjs` - Configuración para GitHub Pages
 
-### Pendiente
-- Build del proyecto
-- Commit y push a main
+### Completado ✅
+- ✅ Build del proyecto exitoso
+- ✅ Commit realizado con mensaje descriptivo
+- ✅ Push a main completado
+- ✅ Dev server funcionando correctamente en localhost:4321/perro-caballo
+- ✅ Listo para GitHub Pages deployment
+
+### Próximos Pasos (Manual)
+Para activar GitHub Pages:
+1. Ir a Settings > Pages en GitHub
+2. Configurar Source: Deploy from a branch
+3. Seleccionar Branch: main, Folder: /docs
+4. Guardar y esperar deployment
